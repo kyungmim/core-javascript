@@ -50,7 +50,7 @@ console.log(Number(+num)); //암시적 형 변환
 const width = '105.3px';
 console.log(Number(width));
 console.log(parseInt(width)); //정수로 변환
-console.log(parseFloat(width)); // 소수까지 출력
+console.log(parseFloat(width)); //소수 까지 출력
 
 /* 데이터 → 불리언 ---------------------------------------------------------- */
 
