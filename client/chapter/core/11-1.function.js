@@ -82,12 +82,61 @@ function rem(pxValue, base = 16) {
 
 //  Test Driven Development (TDD)
 
-console.assert(rem(20) === '1.25rem'); // '1.25rem'
+// console.assert(rem(20) === '1.25rem'); // '1.25rem'
 
-console.assert(rem('25px') === '1.5625rem');
+// console.assert(rem('25px') === '1.5625rem');
 
 // css(node: string, prop: string, value: number|strung) : string;
-let css;
+
+//목표 : wkqktmzmflqxmfm 사용해서 타켓의 css값을 가져와보자
+
+function getStyle(node, prop) {
+  if (typeof node === 'string') {
+    node = document.querySelector(node);
+  }
+
+  if (typeof prop !== 'string') {
+    throw new Error('getStyle 함수의 두 번째 인수는 문자 타입이어야 합니다.');
+  }
+
+  return getComputedStyle(node)[prop];
+  //css속성을 열거 가능
+}
+
+// const first = document.querySelector('.first');
+// const size = getStyle(first, 'fontSize');
+
+// console.log(size);
+
+function setStyle(node, prop, value) {
+  if (typeof node === 'string') {
+    node = document.querySelector(node);
+  }
+
+  if (typeof prop !== 'string') {
+    throw new Error('setStyle 함수의 두 번째 인수는 문자 타입이어야 합니다.');
+  }
+
+  if (!value) {
+    throw new Error('setStyle 함수의 세 번째 인수는 필수 입력값 입니다.');
+  }
+
+  node.style[prop] = value;
+}
+
+// setStyle('.first', 'color', 'red');
+
+function css(node, prop, value) {
+  // if (!value) {
+  //   return getStyle(node, prop);
+  // } else {
+  //   setStyle(node, prop, value);
+  // }
+
+  return !value ? getStyle(node, prop) : setStyle(node, prop, value);
+}
+
+// let css;
 
 // node의 값을 'h1'으로 받았을 경우
 
