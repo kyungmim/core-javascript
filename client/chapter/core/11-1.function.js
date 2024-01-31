@@ -87,8 +87,7 @@ function rem(pxValue, base = 16) {
 // console.assert(rem('25px') === '1.5625rem');
 
 // css(node: string, prop: string, value: number|strung) : string;
-
-//목표 : wkqktmzmflqxmfm 사용해서 타켓의 css값을 가져와보자
+//목표 : 자바스크립트 사용해서 타켓의 css값을 가져와보자
 
 function getStyle(node, prop) {
   if (typeof node === 'string') {
