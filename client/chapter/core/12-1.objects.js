@@ -151,7 +151,7 @@ function deleteProperty(obj, key) {
 
 console.clear();
 
-// 계산된 프로퍼티 (computed property) //질문
+// 계산된 프로퍼티 (computed property)
 let calculateProperty = 'test-1'; // phone | tel
 
 function createUser(name, age2, test) {
@@ -164,8 +164,10 @@ function createUser(name, age2, test) {
 console.log(createUser('name', 30, 'dfd'));
 // 프로퍼티 포함 여부 확인
 
-// 프로퍼티 나열
 const 이름 = '이름';
+//문자로 변수명을 정하면 디버깅시 어려움
+
+// 프로퍼티 나열
 // 프로퍼티 제거 or 삭제
 
 // 단축 프로퍼티
@@ -222,7 +224,7 @@ const [firstElem, secondElem] = document.querySelectorAll('span');
 
 // 순서 상관 x  변수 이름을 바꿀 수 있습니다.
 // 기본값을 지정할 수 있습니다.
-
+// 문자형으로 들어갈때 디버깅하기 어려움
 const salaries = {
   박지성: 800,
   김보미: 300,
@@ -234,6 +236,7 @@ const salaries = {
 function testFunc({ 김보미 = 500, 전희선, ...rest }) {
   console.log('김보미 ', 김보미);
   console.log('전희선 ', 전희선);
+  console.log(rest.박지성);
   console.log(rest.박지성);
   //함수안에서만 도하님은 돈을 받을수있다 함수 없으면 못받으심...
 }
