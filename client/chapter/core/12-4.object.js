@@ -14,13 +14,13 @@ const shopOrder = {
   ],
 
   //객체 안에 만들기
-  totalPrice() {
-    this.total = this.menu.reduce((acc, cur) => acc + cur.price * cur.count, 0);
-    return this.total;
-  },
+  // totalPrice() {
+  //   this.total = this.menu.reduce((acc, cur) => acc + cur.price * cur.count, 0);
+  //   return this.total;
+  // },
 };
 
-shopOrder.totalPrice();
+// shopOrder.totalPrice();
 
 // console.log(
 //   (shopOrder.menu[0].price * shopOrder.menu[0].count) + (shopOrder.menu[1].price * shopOrder.menu[1].count)
@@ -28,16 +28,25 @@ shopOrder.totalPrice();
 
 let total = 0;
 //forEach로 만들기
-shopOrder.menu.forEach((product) => {
-  total += product.price * product.count;
+// shopOrder.menu.forEach((product) => {
+//   total += product.price * product.count;
+// });
+// //위에 코드 한줄로 만들기
+// // shopOrder.menu.forEach(p=> total += p.price * p.count)
+
+shopOrder.menu.forEach((p) => {
+  total += p.price * p.count;
 });
-//위에 코드 한줄로 만들기
-// shopOrder.menu.forEach(p=> total += p.price * p.count)
 
 //reduce로 만들기
-const result = shopOrder.menu.reduce((acc, cur) => {
-  return acc + cur.price * cur.count;
-}, 0);
+// const result = shopOrder.menu.reduce((acc, cur) => {
+//   return acc + cur.price * cur.count;
+// }, 0);
+
+// const lee = shopOrder.menu.reduce((acc, cur) => {
+//   return acc + cur.price * cur.count;
+// }, 0);
+// 내가 만들어봄
 
 //const result = shopOrder.menu.reduce((acc, cur) => return acc + (cur.price * cur.count)}, 0);
 
@@ -67,6 +76,7 @@ const navigationMenu = {
   },
 };
 
+// TypeScript
 navigationMenu.addItem({
   id: 'link-l',
   text: 'lycos',

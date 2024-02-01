@@ -38,7 +38,7 @@ console.log(cloneObject); //얕은 복사(shallow copy)
 console.clear();
 // 2. Object.assign()을 사용한 복사
 const copyObject = Object.assign({}, messenger);
-// console.log(cloneObject);
+console.log(cloneObject);
 
 // 3. 전개 연산자(...)를 사용한 복사
 const spreadObject = { ...messenger };
@@ -62,6 +62,10 @@ const cssMapB = {
   justifyContent: 'center',
   padding: '0.4em 0.62em',
   color: '#3f9e97',
+  headers: {
+    a: 10,
+    b: 30,
+  },
 };
 
 const combinedCssMap = Object.assign({}, cssMapB, cssMapA);
