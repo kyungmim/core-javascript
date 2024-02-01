@@ -33,16 +33,20 @@
 // console.log(TestFunc);
 
 function TestFunc(name, age) {
-  this.name = name;
-  this.age = age;
+  this.name = '이경민';
+  this.age = 28;
 
   this.getAge = function () {
     return age;
+  };
+  this.getName = function () {
+    return name;
   };
 }
 
 let a = new TestFunc('kim', 21);
 
 console.log(a.getAge());
+console.log(a.getName());
 // console.log(TestFunc.getAge());
 console.log(TestFunc());

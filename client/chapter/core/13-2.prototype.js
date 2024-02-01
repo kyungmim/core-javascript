@@ -24,7 +24,7 @@ class Animal {
     this.stomach.push(food);
   }
 }
-
+// const a = new Array();
 // const a = new Animal('호돌이');
 
 class Tiger extends Animal {
