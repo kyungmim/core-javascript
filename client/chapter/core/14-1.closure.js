@@ -24,10 +24,10 @@ function first() {
   return second(); //30
 }
 
+const result = first();
+
 //currying function
 //first()()
-
-const result = first();
 
 // const  counter = ()=> {
 //   let count = 0;
