@@ -27,11 +27,9 @@ console.log(first.hasAttribute('id'));
 // - elementNode.getAttribute(name) – 속성값을 가져옴 // 비표준속성도 가져옴
 console.log(first.getAttribute('say'));
 
+// - elementNode.setAttribute(name, value) – 속성값을 변경함
 first.setAttribute('id', 'text');
 first.setAttribute('data-index', '1');
-
-// - elementNode.setAttribute(name, value) – 속성값을 변경함
-// first.dataset.name = 'tiger';
 
 // - elementNode.removeAttribute(name) – 속성값을 지움
 // first.removeAttribute('class');
@@ -51,11 +49,12 @@ for (const value of first.attributes) {
 
 //setter
 first.dataset.name = 'tiger';
+// console.log(first.dataset.name);
 
 //getter
 console.log(first.dataset);
 
-console.clear();
+// console.clear();
 
 // function attr(node,prop,value){
 
