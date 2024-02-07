@@ -33,6 +33,7 @@ const ground = getNode('.ground');
 const ball = getNode('#ball');
 
 function handleBall({ offsetX: x, offsetY: y }) {
+  //리액트 문법 익숙해져야함,
   // const { offsetX:x, offsetY:y } = e;
 
   ball.style.transform = `translate(${x - ball.offsetWidth / 2}px,${y - ball.offsetHeight / 2}px)`;
