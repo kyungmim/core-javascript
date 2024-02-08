@@ -7,11 +7,25 @@
     <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./style.css" />
 
-    <script src="./chapter/dom/01.BOM.js" defer></script>
+    <script src="./main.js" type="module"></script>
   </head>
   <body>
-    <video autoplay id="video"></video>
-    <h1>hello javascript</h1>
+    <form class="calculator">
+      <div class="first">
+        <label for="firstNumber">First Value</label>
+        <input type="number" name="first" id="firstNumber" required />
+      </div>
+
+      <div class="operator">+</div>
+
+      <div class="second">
+        <label for="secondNumber">Second Value</label>
+        <input type="number" name="second" id="secondNumber" required />
+      </div>
+
+      <input id="clear" type="submit" value="clear" />
+
+      <div class="result">-</div>
+    </form>
   </body>
 </html>
-
