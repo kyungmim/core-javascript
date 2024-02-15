@@ -57,18 +57,13 @@ export function xhr({
       }
     }
   });
+
   xhr.send(JSON.stringify(body));
 }
 
 // callback => 함수 본문을 넘겨서 안쪽 함수에서 실행
 
-xhr({
-  url: END_POINT,
-  onSuccess(data) {
-    // console.log(data);
-  },
-  onFail() {},
-});
+// 자바스크립트 함수는 객체다.
 
 xhr.get = (url, onSuccess, onFail) => {
   xhr({
@@ -77,12 +72,6 @@ xhr.get = (url, onSuccess, onFail) => {
     onFail,
   });
 };
-
-xhr.get(
-  END_POINT,
-  () => {},
-  () => {}
-);
 
 xhr.post = (url, body, onSuccess, onFail) => {
   xhr({
@@ -130,8 +119,9 @@ function xhrPromise(method, url, body) {
     xhr.addEventListener('readystatechange', () => {
       if (xhr.readyState === 4) {
         if (xhr.status >= 200 && xhr.status < 400) {
-          JSON.parse(xhr.response);
+          resolve(JSON.parse(xhr.response));
         } else {
+          reject({ message: '알 수 없는 오류가 발생했습니다!' });
           // error
         }
       }
@@ -139,4 +129,10 @@ function xhrPromise(method, url, body) {
   });
 }
 
-xhrPromise('GET', END_POINT);
+xhrPromise('GET', END_POINT)
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    err.message;
+  });
