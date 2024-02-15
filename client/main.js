@@ -1,4 +1,11 @@
-import { diceAnimation, getNode, getNodes, insertLast } from './lib/index.js';
+import {
+  clearContents,
+  diceAnimation,
+  endScroll,
+  getNode,
+  getNodes,
+  insertLast,
+} from './lib/index.js';
 
 // [phase-1]
 // 1. 주사위 굴리기 버튼을 누르면 diceAnimation() 실행될 수 있도록
@@ -24,18 +31,24 @@ const recordListWrapper = getNode('.recordListWrapper');
 
 let count = 0;
 let total = 0;
+
+function createItem(value) {
+  return /*html*/ `
+  <tr>
+  <td>${++count}</td>
+  <td>${value}</td>
+  <td>${(total += value)}</td>
+</tr>`;
+}
+
 function renderRecordItem() {
   const cube = getNode('#cube');
   const diceValue = +cube.dataset.dice;
-  const template = /*html*/ `
-  <tr>
-  <td>${++count}</td>
-  <td>${diceValue}</td>
-  <td>${(total += diceValue)}</td>
-</tr>`;
 
   //랜더링
-  insertLast('.recordList tbody', template);
+  insertLast('.recordList tbody', createItem(diceValue));
+
+  endScroll(recordListWrapper);
 }
 
 const handleRollingDice = (() => {
@@ -62,5 +75,17 @@ function handleRecord() {
   renderRecordItem();
 }
 
+function handleReset() {
+  recordListWrapper.hidden = true;
+
+  clearContents('tbody');
+  count = 0;
+  total = 0;
+
+  recordButton.disabled = true;
+  resetButton.disabled = true;
+}
+
 rollingButton.addEventListener('click', handleRollingDice);
 recordButton.addEventListener('click', handleRecord);
+resetButton.addEventListener('click', handleReset);
