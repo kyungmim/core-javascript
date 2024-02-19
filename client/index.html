@@ -7,11 +7,13 @@
     <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./style.css" />
 
-    <script src="./chapter/dom/01.BOM.js" defer></script>
+    <script src="./main.js" type="module"></script>
   </head>
   <body>
-    <video autoplay id="video"></video>
-    <h1>hello javascript</h1>
+    <div class="container">
+      <label for="textField"></label>
+      <textarea name="someText" id="textField" cols="30" rows="10"></textarea>
+      <button type="button" data-name="clear">clear</button>
+    </div>
   </body>
 </html>
-
